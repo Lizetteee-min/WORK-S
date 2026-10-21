@@ -1,0 +1,101 @@
+/* COLORES (cámbialos aquí y cambian en toda la página) */
+:root{
+  --navy:#1A2862; --side:#0F1B3F; --azul:#2A67AD; --claro:#5BA3E8;
+  --fondo:#F4F6FA; --texto:#0F1B3D; --gris:#64708A; --borde:#E3E8F1;
+  --rojo:#E04848; --naranja:#E8A23A; --verde:#17A56B;
+}
+*{box-sizing:border-box;margin:0} /* quita los márgenes raros que trae el navegador */
+body{font-family:Arial,Helvetica,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.45}
+[hidden]{display:none!important} /* lo que tenga "hidden" se esconde sí o sí */
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit} /* botones sin el estilo feo de fábrica */
+html{scroll-behavior:smooth;scroll-padding-top:70px} /* scroll suavecito */
+
+/* COSAS QUE SE USAN EN VARIOS LADOS */
+.btn{display:inline-block;background:var(--azul);color:#fff;padding:11px 18px;border-radius:6px;font-size:.92rem} /* botón azul normal */
+.btn:hover{background:#235a9a} /* se oscurece cuando le pasas el mouse */
+.btn.out{background:none;border:1px solid #fff} /* botón transparente con borde blanco */
+.btn.blanco{background:#fff;color:var(--navy)} /* botón blanco */
+.btn.full{width:100%;margin-top:18px} /* botón que ocupa todo el ancho */
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--borde);border-radius:6px;font:inherit;background:#fff;color:var(--texto)} /* todos los campos para escribir se ven igual */
+input:focus,select:focus,textarea:focus{outline:2px solid #2A67AD44;border-color:var(--azul)} /* se marca azul cuando le das clic */
+.lbl{font-size:.82rem;font-weight:bold;margin:14px 0 5px;display:block} /* el texto chiquito arriba de cada campo */
+.logo{display:flex;align-items:center;gap:8px;font-size:1.3rem;font-weight:bold} /* logo + nombre juntos */
+.logo img{width:40px}
+.logo b{color:var(--claro)} /* la "S" en azul clarito */
+
+/* PORTADA (la primera pantalla) */
+.lhead{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 5vw;position:sticky;top:0;z-index:5;border-bottom:1px solid #ffffff44} /* barra de arriba, se queda pegada al hacer scroll */
+.hero{min-height:75vh;display:flex;align-items:center;color:#fff;background:var(--navy)} /* la parte grande con el título */
+.hero div{padding:60px 5vw;max-width:720px}
+.hero small{letter-spacing:.08em;text-transform:uppercase;color:#A9C4EE;font-weight:bold;font-size:.75rem} /* el texto chiquito de arriba del título */
+.hero h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.12;margin:14px 0} /* el título grande, se adapta al tamaño de pantalla */
+.hero p{color:#C3CCE8;max-width:520px;margin-bottom:22px}
+.pie{background:var(--navy);color:#9fb0d8;text-align:center;padding:22px;font-size:.85rem} /* el pie de página */
+
+/* LOGIN */
+#login{position:relative;min-height:100vh;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px} /* todo centrado en la pantalla */
+.vol{position:absolute;top:18px;left:20px;color:#F6F3E8;font-size:.9rem} /* botón "Volver al inicio" arriba a la izquierda */
+.lmarca{text-align:center;color:#F6F3E8;margin-bottom:22px} /* logo grande arriba del cuadro blanco */
+.lmarca img{width:84px}
+.lmarca h1{font-size:2.2rem;margin-top:4px}
+.lmarca h1 b{color:var(--claro)}
+.lmarca p{opacity:.85}
+.lbox{background:#fff;border-radius:8px;padding:28px;width:100%;max-width:380px} /* el cuadro blanco del formulario */
+.lbox h2{font-size:1.2rem;color:var(--navy);margin-bottom:4px}
+.error{color:var(--rojo);font-size:.85rem;min-height:1.2em;margin-top:10px} /* mensaje rojo si te equivocas de contraseña */
+
+/* PROGRAMA: menú de la izquierda + contenido */
+#app{display:grid;grid-template-columns:240px 1fr;min-height:100vh} /* dos columnas: menú (240px) y todo lo demás */
+aside{background:var(--side);color:#fff;padding:20px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column} /* el menú oscuro de la izquierda */
+.emp{font-size:.78rem;color:#9fb0d8;margin:4px 0 20px} /* nombre de la empresa debajo del logo */
+#nav{flex:1;overflow-y:auto} /* los botones del menú, ocupan el espacio que sobra */
+#nav button{display:block;width:100%;text-align:left;padding:11px 12px;border-radius:6px;color:#C9D2EE;font-size:.92rem;margin-bottom:2px}
+#nav button:hover{background:#ffffff14} /* se ilumina con el mouse */
+#nav button.on{background:var(--azul);color:#fff} /* el apartado donde estás parado */
+.salir{padding:12px;color:#9fb0d8;font-size:.9rem;border-top:1px solid #ffffff22;text-align:left} /* "Cerrar sesión" abajo del menú */
+.top{background:#fff;border-bottom:1px solid var(--borde);padding:14px 26px;display:flex;justify-content:space-between;align-items:center;font-size:.9rem} /* barra blanca de arriba con título y nombre de usuario */
+.top span{color:var(--gris)}
+.burger{display:none} /* el botón ☰ está escondido, solo sale en celular */
+main{padding:26px;max-width:1200px} /* donde se pone el contenido de cada pantalla */
+h1.t{font-size:1.5rem;color:var(--navy)} /* título de cada pantalla */
+.sub{color:var(--gris);font-size:.9rem;margin:2px 0 18px} /* texto gris debajo del título */
+
+/* TARJETAS, NÚMEROS Y TABLAS */
+.card{background:#fff;border:1px solid var(--borde);border-radius:8px;padding:18px;margin-bottom:14px} /* cuadro blanco con borde donde va todo */
+.card h3{font-size:1rem;margin-bottom:12px;color:var(--navy)}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:14px} /* los cuadritos con números grandes, se acomodan solos */
+.nums .card{margin:0}
+.nums small{color:var(--gris);font-size:.8rem}
+.nums b{display:block;font-size:1.8rem;color:var(--navy)} /* el número grande */
+.scroll{overflow-x:auto} /* si la tabla es muy ancha, se mueve de lado en vez de romper la página */
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th{text-align:left;background:var(--fondo);color:var(--gris);padding:9px;font-size:.78rem;white-space:nowrap} /* encabezados de la tabla */
+td{padding:10px 9px;border-bottom:1px solid var(--borde)}
+.tag{padding:2px 8px;border-radius:4px;font-size:.75rem;font-weight:bold;white-space:nowrap} /* las etiquetitas de colores (Alta, Pendiente, etc.) */
+.Alta{background:#FCECEC;color:var(--rojo)} /* rojo */
+.Media,.Pendiente{background:#FDF3E1;color:#B7791F} /* naranja */
+.Baja,.Atendido{background:#E5F6EE;color:var(--verde)} /* verde */
+.En-revisión{background:#E8F0FB;color:var(--azul)} /* azul */
+
+/* FORMULARIOS Y BARRAS */
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px} /* los botones para elegir el tipo de reporte */
+.opt{border:1px solid var(--borde);border-radius:6px;padding:12px;font-size:.88rem;text-align:left;background:#fff}
+.opt small{display:block;color:var(--gris);font-size:.76rem}
+.opt.sel{border:2px solid var(--azul);background:#F4F8FE;padding:11px} /* el tipo que elegiste, queda marcado en azul */
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:12px} /* dos campos lado a lado */
+.dos{display:grid;grid-template-columns:1.4fr 1fr;gap:14px} /* dos tarjetas lado a lado (la primera un poco más grande) */
+.barra{display:grid;grid-template-columns:110px 1fr 28px;gap:10px;align-items:center;margin:10px 0;font-size:.88rem} /* una fila de la gráfica: nombre, barra y número */
+.barra .f{background:var(--fondo);height:12px;border-radius:6px;overflow:hidden} /* el fondo gris de la barra */
+.barra .r{background:var(--azul);height:100%} /* la parte azul que se llena */
+
+/* CELULAR (pantallas chicas) */
+@media(max-width:800px){
+  #app{grid-template-columns:1fr} /* una sola columna */
+  aside{position:fixed;z-index:10;width:240px;transform:translateX(-100%);transition:transform .2s} /* el menú se esconde a la izquierda */
+  aside.abierto{transform:none} /* cuando le das al ☰ se asoma */
+  .burger{display:block;font-size:1.4rem} /* ahora sí se ve el ☰ */
+  main{padding:18px}
+  .dos,.f2{grid-template-columns:1fr} /* todo uno abajo del otro */
+}
+
+#aviso{position:fixed;top:0;left:0;right:0;z-index:99;background:var(--rojo);color:#fff;padding:10px 16px;font-size:.9rem}

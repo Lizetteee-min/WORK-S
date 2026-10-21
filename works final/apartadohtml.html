@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- para que se vea bien en el celular -->
+<title>Work-S · Seguridad que previene</title> <!-- el nombre que sale en la pestaña -->
+<link rel="icon" id="favicon"> <!-- el iconito de la pestaña, se llena desde el JS -->
+<link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body>
+<!-- cuadro rojo que sale arriba si algo truena en el JS -->
+<div id="aviso" hidden></div>
+
+<!-- PORTADA (lo primero que se ve) -->
+<div id="landing">
+  <header class="lhead">
+    <div class="logo"><img data-logo alt=""><span>Work-<b>S</b></span></div> <!-- data-logo = aquí se pone el logo desde el JS -->
+    <button class="btn out" onclick="mostrar('login')">Iniciar sesión</button> <!-- te lleva al login -->
+  </header>
+  <section class="hero" id="inicio"><div>
+    <small>Gestión inteligente de seguridad industrial</small>
+    <h2>Registra, organiza y analiza los eventos de seguridad de tu empresa desde un solo lugar.</h2>
+    <p>Una herramienta digital para gestionar la información de seguridad laboral de manera organizada, accesible y preventiva.</p>
+    <button class="btn blanco" onclick="mostrar('login')">Iniciar sesión</button>
+  </div></section>
+  <footer class="pie">Work-S · Seguridad que previene</footer>
+</div>
+
+<!-- INICIO DE SESIÓN -->
+<section id="login" hidden>
+  <button class="vol" onclick="mostrar('landing')">← Volver al inicio</button>
+  <div class="lmarca"><img data-logo alt=""><h1>Work-<b>S</b></h1><p>Seguridad que previene</p></div>
+  <form class="lbox" onsubmit="iniciarSesion(event)"> <!-- al enviar, corre la función iniciarSesion() -->
+    <h2>Iniciar sesión</h2>
+    <label class="lbl" for="correo">Correo electrónico</label>
+    <input id="correo" type="email" placeholder="nombre@empresa.com" required>
+    <label class="lbl" for="clave">Contraseña</label>
+    <input id="clave" type="password" placeholder="••••••" required>
+    <p class="error" id="error"></p> <!-- aquí sale el mensaje si algo está mal -->
+    <button class="btn full" type="submit">Iniciar sesión</button>
+  </form>
+</section>
+
+<!-- PROGRAMA (ya con sesión iniciada) -->
+<div id="app" hidden>
+  <aside id="menu"> <!-- menú de la izquierda -->
+    <div class="logo"><img data-logo alt=""><span>Work-<b>S</b></span></div>
+    <div class="emp" id="emp"></div> <!-- nombre de la empresa, lo llena el JS -->
+    <nav id="nav"></nav> <!-- botones del menú, los llena el JS según el rol -->
+    <button class="salir" onclick="cerrarSesion()">Cerrar sesión</button>
+  </aside>
+  <div>
+    <div class="top">
+      <button class="burger" onclick="$('menu').classList.toggle('abierto')">☰</button> <!-- abre y cierra el menú en celular -->
+      <b id="tit"></b><span id="usu"></span> <!-- título de la pantalla y nombre del usuario -->
+    </div>
+    <main id="vista"></main> <!-- aquí se pinta cada pantalla -->
+  </div>
+</div>
+
+<script src="../java/app.js" defer></script>
+</body>
+</html>
