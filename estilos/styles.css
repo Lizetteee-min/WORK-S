@@ -19,12 +19,13 @@ html{scroll-behavior:smooth;scroll-padding-top:70px} /* scroll suavecito */
 input,select,textarea{width:100%;padding:10px;border:1px solid var(--borde);border-radius:6px;font:inherit;background:#fff;color:var(--texto)} /* todos los campos para escribir se ven igual */
 input:focus,select:focus,textarea:focus{outline:2px solid #2A67AD44;border-color:var(--azul)} /* se marca azul cuando le das clic */
 .lbl{font-size:.82rem;font-weight:bold;margin:14px 0 5px;display:block} /* el texto chiquito arriba de cada campo */
-.logo{display:flex;align-items:center;gap:8px;font-size:1.3rem;font-weight:bold} /* logo + nombre juntos */
-.logo img{width:40px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:bold} /* logo + nombre juntos */
+.logo img{width:60px;height:60px;object-fit:contain;flex:none}
 .logo b{color:var(--claro)} /* la "S" en azul clarito */
 
 /* PORTADA (la primera pantalla) */
-.lhead{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:12px 5vw;position:sticky;top:0;z-index:5;border-bottom:1px solid #ffffff44} /* barra de arriba, se queda pegada al hacer scroll */
+.lhead{height:64px;min-height:64px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;position:sticky;top:0;z-index:5;border-bottom:1px solid #ffffff44} /* barra de arriba, se queda pegada al hacer scroll */
+.lhead .logo img{width:76px;height:76px}
 .hero{min-height:75vh;display:flex;align-items:center;color:#fff;background:var(--navy)} /* la parte grande con el título */
 .hero div{padding:60px 5vw;max-width:720px}
 .hero small{letter-spacing:.08em;text-transform:uppercase;color:#A9C4EE;font-weight:bold;font-size:.75rem} /* el texto chiquito de arriba del título */
@@ -36,7 +37,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #2A67AD44;border-color
 #login{position:relative;min-height:100vh;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px} /* todo centrado en la pantalla */
 .vol{position:absolute;top:18px;left:20px;color:#F6F3E8;font-size:.9rem} /* botón "Volver al inicio" arriba a la izquierda */
 .lmarca{text-align:center;color:#F6F3E8;margin-bottom:22px} /* logo grande arriba del cuadro blanco */
-.lmarca img{width:84px}
+.lmarca img{width:120px;height:120px;object-fit:contain}
 .lmarca h1{font-size:2.2rem;margin-top:4px}
 .lmarca h1 b{color:var(--claro)}
 .lmarca p{opacity:.85}

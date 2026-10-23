@@ -1,5 +1,5 @@
-/* LOGO: pega tu imagen en base64 UNA sola vez aquí */
-const LOGO = "../images/logo.png";
+/* LOGO */
+const LOGO = "../images/logo-works.png";
 document.querySelectorAll("[data-logo]").forEach(img => img.src = LOGO); // le pone el logo a todas las imágenes marcadas con data-logo
 document.getElementById("favicon").href = LOGO; // y también al iconito de la pestaña
 
